@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="Login_MasterPage" %>
+
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>.:: 365 ::.</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="stylesheet" href="css/SiteGaleria.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/bootstrapGaleria.css" type="text/css" media="screen" />
+    <link rel="Stylesheet" href="css/MessaBox.css" type="text/css" media="screen" />
+    <link rel="Stylesheet" href="css/timeline.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="js/DOMAlert.js"></script>
+
+    <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+   
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+         <asp:ScriptManager runat="server" ID="ScriptManager1"  EnablePageMethods = "true">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+             <asp:UpdatePanel ID="udpHojaGestionMaster" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>
+                <%--<script type="text/javascript" language="javascript">
+                var ModalProgress = '<%= ModalProgress.ClientID %>';
+            </script>
+            <script type="text/javascript" src="../js/jsUpdateProgress.js"></script>--%>
+
+                <div class="navbar navbar-inverse navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" runat="server" href="Main.aspx">Empresa 365</a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <asp:Menu ID="Menu1" runat="server"
+                                IncludeStyleBlock="false" Orientation="Horizontal"
+                                CssClass="nav navbar-nav"
+                                StaticMenuStyle-CssClass="nav navbar-nav"
+                                DynamicMenuStyle-CssClass="dropdown-menu">
+                            </asp:Menu>
+                        </div>
+                    </div>
+                </div>
+    
+                <div>
+                    <div class="container body-content">
+                        <br />
+                      
+                         
+                   
+
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <hr />
+                        <footer>
+                            <p>&copy; <%: DateTime.Now.Year %> - <b>“El éxito empresarial necesita administrarse.”</b></p>
+                        </footer>
+                    </div>
+                </div>
+
+            </ContentTemplate>
+
+        </asp:UpdatePanel>
+      
+    </form>
+</body>
+</html>
